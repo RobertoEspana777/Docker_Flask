@@ -6,6 +6,10 @@ if ! command -v docker &> /dev/null; then
     exit 1
 fi
 
+# Detener y eliminar el contenedor existente si ya está en ejecución
+docker stop flaskdocker1 &> /dev/null
+docker rm flaskdocker1 &> /dev/null
+
 # Descargar la imagen desde Docker Hub
 docker pull robertoorfeo22/flaskdocker1
 
